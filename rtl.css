@@ -1,0 +1,305 @@
+/*
+Theme Name: Beautiful
+Description: Adds support for languages written in a Right To Left (RTL) direction.
+It's easy, just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+See http://codex.wordpress.org/Right_to_Left_Language_Support
+*/
+
+/**
+ * Table of Contents:
+ *
+ * 1.0 - Reset
+ * 2.0 - Repeatable Patterns
+ * 4.0 - Header
+ * 5.0 - Navigation
+ * 6.0 - Content
+ *   6.3 - Entry Meta
+ *   6.4 - Entry Content
+ *   6.5 - Galleries
+ *   6.7 - Post/Image/Paging Navigation
+ *   6.10 - Contributor Page
+ *   6.14 - Comments
+ * 7.0 - Sidebar
+ *   7.1 - Widgets
+ *   7.2 - Content Sidebar Widgets
+ * 9.0 - Featured Content
+ * 10.0 - Media Queries
+ * -----------------------------------------------------------------------------
+ */
+
+
+/**
+ * 1.0 Reset
+ * -----------------------------------------------------------------------------
+ */
+
+@import url(http://awebfont.ir/css?id=1116&mode=wetso);
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+	font-family: 'B Yekan', 'Open Sans', sans-serif;
+	font-size: 20px;
+}
+
+
+/**
+ * 2.0 Repeatable Patterns
+ * -----------------------------------------------------------------------------
+ */
+
+.wp-caption-text {
+	padding-left: 10px;
+	padding-right: 0;
+}
+
+.screen-reader-text:focus {
+	right: 5px;
+	left: auto;
+}
+
+
+/**
+ * 4.0 Header
+ * -----------------------------------------------------------------------------
+ */
+
+.logo {
+	float: right;
+}
+
+/**
+ * 5.0 Navigation
+ * -----------------------------------------------------------------------------
+ */
+
+#navigation ul,
+#navigation ul li {
+	float: right;
+}
+
+
+/**
+ * 6.0 Content
+ * -----------------------------------------------------------------------------
+ */
+
+.single-title {
+	text-align: right;
+}
+
+.blog-post {
+	float: right;
+}
+
+/**
+ * 6.3 Entry Meta
+ * -----------------------------------------------------------------------------
+ */
+
+
+
+
+/**
+ * 6.4 Entry Content
+ * -----------------------------------------------------------------------------
+ */
+
+
+
+
+/**
+ * 6.5 Galleries
+ * -----------------------------------------------------------------------------
+ */
+
+.gallery-item {
+	float: right;
+	margin: 0 0 4px 4px;
+}
+
+.gallery-columns-1 .gallery-item:nth-of-type(1n),
+.gallery-columns-2 .gallery-item:nth-of-type(2n),
+.gallery-columns-3 .gallery-item:nth-of-type(3n),
+.gallery-columns-4 .gallery-item:nth-of-type(4n),
+.gallery-columns-5 .gallery-item:nth-of-type(5n),
+.gallery-columns-6 .gallery-item:nth-of-type(6n),
+.gallery-columns-7 .gallery-item:nth-of-type(7n),
+.gallery-columns-8 .gallery-item:nth-of-type(8n),
+.gallery-columns-9 .gallery-item:nth-of-type(9n) {
+	margin-right: auto;
+	margin-left: 0;
+}
+
+.gallery-caption {
+	padding: 6px 8px;
+	right: 0;
+	left: auto;
+	text-align: right;
+}
+
+.gallery-caption:before {
+	right: 0;
+	left: auto;
+}
+
+
+/**
+ * 6.7 Post/Image/Paging Navigation
+ * -----------------------------------------------------------------------------
+ */
+
+.paging-navigation .page-numbers {
+	margin-right: auto;
+	margin-left: 1px;
+}
+
+
+/**
+ * 6.10 Contributor Page
+ * -----------------------------------------------------------------------------
+ */
+
+
+/**
+ * 6.14 Comments
+ * -----------------------------------------------------------------------------
+ */
+
+.comment-author {
+	float: right;
+	border-left: 1px solid #DDD;
+}
+
+.says {
+	display: none;
+}
+
+.comment-author-admin .comment-author .fa-star {
+	float: none;
+	margin-top: 0;
+}
+
+/**
+ * 7.0 Sidebars
+ * -----------------------------------------------------------------------------
+ */
+
+.menu
+{
+	position: relative;
+}
+.menu .close-menu
+{
+	position: absolute;
+	right: 50%;
+	margin-right: -17px;
+	top: -120px;
+}
+.menu .open-menu
+{
+	position: absolute;
+	right: 50%;
+	margin-right: -17px;
+}
+aside.sidebar
+{
+	width: 0;
+	position: absolute;
+	padding: 12px 0px;
+	left: -400px;
+	right: inherit;
+	border: 0;
+	background: #333;
+	z-index: +9999;
+	color: #FFF;
+	overflow: scroll;
+	overflow-x: hidden;
+	min-height: 100%;
+}
+
+/**
+ * 7.1 Widgets
+ * -----------------------------------------------------------------------------
+ */
+
+
+/**
+ * 7.2 Content Sidebar Widgets
+ * -----------------------------------------------------------------------------
+ */
+
+.content-sidebar .widget li > ol,
+.content-sidebar .widget li > ul {
+	margin-right: 18px;
+	margin-left: auto;
+}
+
+.content-sidebar .widget_twentyfourteen_ephemera .widget-title:before {
+	margin: -1px 0 0 18px;
+}
+
+
+/**
+ * 9.0 Featured Content
+ * -----------------------------------------------------------------------------
+ */
+
+.featured-content .post-thumbnail img {
+	right: 0;
+	left: auto;
+}
+
+.slider-viewport {
+	direction: ltr;
+}
+
+.slider .featured-content .entry-header {
+	right: 0;
+	left: auto;
+	text-align: right;
+}
+
+.slider-control-paging {
+	float: right;
+}
+
+.slider-control-paging li {
+	float: right;
+	margin: 2px 0 2px 4px;
+}
+
+.slider-control-paging li:last-child {
+	margin-right: auto;
+	margin-left: 0;
+}
+
+.slider-control-paging a:before {
+	right: 10px;
+	left: auto;
+}
+
+.slider-direction-nav li {
+	border-width: 2px 0 0 1px;
+	float: right;
+}
+
+.slider-direction-nav li:last-child {
+	border-width: 2px 1px 0 0;
+}
+
+.slider-direction-nav a:before {
+	content: "\f429";
+}
+
+.slider-direction-nav .slider-next:before {
+	content: "\f430";
+}
+
+
+/**
+ * 10.0 Media Queries
+ * -----------------------------------------------------------------------------
+ */
