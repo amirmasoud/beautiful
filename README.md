@@ -1,19 +1,34 @@
-Beautiful
-=========
+<h1>Beautiful</h1>
 
 Responsive colorful WordPress theme built with bootstrap 3
 
-<a href="http://live.chakosh.ir/?theme=beautiful">Demo</a>
+Feel free to open a new issue for any bugs or suggestions :)
 
-===============================================================
+=========
 
-Thanks for downloading Beautiful Theme
+<h2>How to install?</h2>
 
-More info always on http://chakosh.ir
+For users: <a href="hhtp://wordpress.org/themes/beautiful">Download it from WordPress</a>
 
-Thank you for supporting! @AmirMasoud32
+For Developers: git clone https://github.com/amirmasoud/Beautiful
 
-=== Change Log ===
+=========
+
+<h2>Follow me</h2>
+
+<a href="http://blog.chakosh.ir/">About Me</a>
+
+<a href="http://chakosh.ir">Blog(Persian)</a>
+<a href="http://twitter.com/ChakoshDev">Twitter</a>
+<a href="http://facebook.com/ChakoshDev">Facebook</a>
+<a href="http://instagram.com/amirmasoud32">Instagram</a>
+
+Thank you for supporting :)
+
+=========
+
+
+<h3>Change Log</h3>
 
 1.0
 initial realese
@@ -48,3 +63,4 @@ bug fixes
 
 1.0.9
 logo overflow fixed
+sidebar Scroll fixed
