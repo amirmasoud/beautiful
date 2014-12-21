@@ -1,5 +1,6 @@
 <h1>Beautiful</h1>
 
+
 Responsive colorful WordPress theme built with bootstrap 3
 
 Feel free to open a new issue for any bugs or suggestions :)
@@ -7,6 +8,7 @@ Feel free to open a new issue for any bugs or suggestions :)
 =========
 
 <h2>How to install?</h2>
+
 
 For users: <a href="hhtp://wordpress.org/themes/beautiful">Download it from WordPress</a>
 
@@ -16,11 +18,15 @@ For Developers: git clone https://github.com/amirmasoud/Beautiful
 
 <h2>Follow me</h2>
 
+
 <a href="http://blog.chakosh.ir/">About Me</a>
 
 <a href="http://chakosh.ir">Blog(Persian)</a>
+
 <a href="http://twitter.com/ChakoshDev">Twitter</a>
+
 <a href="http://facebook.com/ChakoshDev">Facebook</a>
+
 <a href="http://instagram.com/amirmasoud32">Instagram</a>
 
 Thank you for supporting :)
@@ -29,6 +35,7 @@ Thank you for supporting :)
 
 
 <h3>Change Log</h3>
+
 
 1.0
 initial realese
