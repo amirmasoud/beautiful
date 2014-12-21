@@ -1,20 +1,26 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
-"Project-Id-Version: Beautiful\n"
-"POT-Creation-Date: 2014-07-22 18:56+0330\n"
-"PO-Revision-Date: 2014-07-22 19:10+0330\n"
+"Project-Id-Version: beautiful\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-11-28 19:20+0300\n"
+"PO-Revision-Date: 2014-11-29 19:43+0300\n"
 "Last-Translator: \n"
-"Language-Team: Chakosh <amirmasood32@ymail.com>\n"
+"Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"Plural-Forms: \n"
+"X-Generator: Eazy Po 0.9.5.2\n"
 "X-Poedit-KeywordsList: __;_e;_x\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:15
+#: 404.php:15 search.php:31
 msgid "Not Found"
 msgstr "پیدا نشد"
 
@@ -22,7 +28,7 @@ msgstr "پیدا نشد"
 msgid "Oops, we couldn't handle your request."
 msgstr "وااای، ما نتونستیم بفهمیم دنبال چی می گردی"
 
-#: 404.php:20
+#: 404.php:20 search.php:36
 msgid "Back to home"
 msgstr "بازگشت به خانه"
 
@@ -53,6 +59,17 @@ msgstr "Y"
 msgid "Archives"
 msgstr "آرشیو ها"
 
+#: archive.php:55 author.php:46 category.php:41
+msgid "Oops!"
+msgstr "واااای"
+
+#: archive.php:57 author.php:48 category.php:43
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"ظاهرن ما نتونستیم چیزی را که دنبالش می گردی را پیدا کنیم، می خوای جسنجو کنی؟"
+
 #: author.php:29
 #, php-format
 msgid "All posts by %s"
@@ -63,15 +80,15 @@ msgstr "همه نوشته های %s"
 msgid "Category Archives: %s"
 msgstr "آرشیو دسته ها: %s"
 
-#: comments.php:21 comments.php:38
+#: comments.php:14 comments.php:31
 msgid " <i class=\"fa fa-angle-left\"></i> Older Comments"
 msgstr " <i class=\"fa fa-angle-right\"></i> دیدگاه های قدیمی تر"
 
-#: comments.php:22 comments.php:39
+#: comments.php:15 comments.php:32
 msgid "Newer Comments <i class=\"fa fa-angle-right\"></i>"
 msgstr "دیدگاه های تازه تر <i class=\"fa fa-angle-left\"></i>"
 
-#: comments.php:44
+#: comments.php:37
 msgid "Comments are closed."
 msgstr "گذاشتن دیدگاه بسته شده است."
 
@@ -88,70 +105,77 @@ msgstr "با افتخار قدرت گرفته از %s"
 msgid "THEMED BY"
 msgstr "تم "
 
-#: functions.php:40
+#: functions.php:15
 msgid "Primary Sidebar"
 msgstr "سایدبار اصلی"
 
-#: functions.php:42
+#: functions.php:17
 msgid "sidebar"
 msgstr "سایدبار"
 
-#: functions.php:51 functions.php:53
+#: functions.php:26 functions.php:28
 msgid "First footer sidebar"
 msgstr "سایدبار اول   پانوشت"
 
-#: functions.php:61 functions.php:63
+#: functions.php:36 functions.php:38
 msgid "Second footer sidebar"
 msgstr "سایدبار دوم  پانوشت"
 
-#: functions.php:71 functions.php:73
+#: functions.php:46 functions.php:48
 msgid "Third footer sidebar"
 msgstr "سایدبار سوم  پانوشت"
 
-#: functions.php:81 functions.php:83
+#: functions.php:56 functions.php:58
 msgid "Forth footer sidebar"
 msgstr "سایدبار چهارم پانوشت"
 
-#: functions.php:166
+#: functions.php:183
 msgid "Name"
 msgstr "اسم"
 
-#: functions.php:166 functions.php:167 functions.php:168
+#: functions.php:183 functions.php:184
 msgid " (require)"
 msgstr "(لازم)"
 
-#: functions.php:167
+#: functions.php:184
 msgid "Email"
 msgstr "رایانامه"
 
-#: functions.php:168
+#: functions.php:185
 msgid "url"
 msgstr "آدرس وبسایت"
 
-#: functions.php:178
+#: functions.php:195
 msgid "Comment"
 msgstr "دیدگاه"
 
-#: functions.php:203
+#: functions.php:220
 #, php-format
 msgid "Page %s"
 msgstr "صفحه  %s"
 
-#: functions.php:217
+#: functions.php:238 functions.php:250
 msgid "previous posts"
 msgstr "نوشته های پیشین"
 
-#: functions.php:221
+#: functions.php:242 functions.php:254
 msgid "next posts"
 msgstr "نوشته های پسین"
 
-#: functions.php:288 functions.php:304
+#: functions.php:325 functions.php:343 functions.php:361
 msgid "continue..."
 msgstr "ادامه..."
 
-#: header.php:51
-msgid "Toggle navigation"
-msgstr "بازکردن/بستن پیمایشگر"
+#: index.php:83
+msgid "Ready to Bloging?"
+msgstr "آماده ای؟"
+
+#: index.php:85
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"آماده ای اولین نوشته ات را پست کنی؟ <a href=\"%1$s\">از این جا شروع کن</a>."
 
 #: page.php:25 single.php:13
 msgid "Pages:"
@@ -170,6 +194,13 @@ msgstr " پیش"
 msgid "Search Results for: %s"
 msgstr "نتیجه های جستجو برای: %s"
 
+#: search.php:33
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"متاسفیم، ولی چیزی پیدا نکردیم لطفا با یک کلید واژه دیگه دوباره امتحان کنید."
+
 #: searchform.php:2
 msgid "Search for..."
 msgstr "جستجو برای ..."
@@ -178,3 +209,6 @@ msgstr "جستجو برای ..."
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "آرشیو برچسب ها: %s"
+
+#~ msgid "Toggle navigation"
+#~ msgstr "بازکردن/بستن پیمایشگر"

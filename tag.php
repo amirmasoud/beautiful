@@ -19,7 +19,7 @@ get_header(); ?>
 
 		<header class="page-header text-center">
 			<h1 class="page-title"><i class="fa fa-tag"></i> 
-				<?php printf( __( 'Tag Archives: %s', 'twentyfourteen' ), single_tag_title( '', false ) ); ?>
+				<?php printf( __( 'Tag Archives: %s', 'beautiful' ), single_tag_title( '', false ) ); ?>
 			</h1>
 
 			<?php
@@ -43,7 +43,5 @@ get_header(); ?>
 </section>
 
 <?php beautiful_blog_navigation(); ?>
-
-</section>
 
 <?php get_footer() ?>

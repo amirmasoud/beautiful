@@ -49,13 +49,21 @@ get_header(); ?>
 				// display each post
 				beautiful_blog_post();
 		endwhile;
-	endif; 
+	else:
+		?>
+
+		<h1 class="page-title text-center not-found"><i class="fa fa-fire-extinguisher red"></i> <?php _e( 'Oops!', 'beautiful' ); ?></h1>
+		<p class="text-center">
+			<?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'beautiful' ); ?>
+			<br />
+		</p>
+		
+		<?php
+	endif;	
 	?>
 
 </section>
 
 <?php beautiful_blog_navigation(); ?>
-
-</section>
 
 <?php get_footer() ?>

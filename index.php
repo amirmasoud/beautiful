@@ -22,6 +22,10 @@ get_header() ?>
 
 		// get first 4 stickt posts
 		$sticky = get_option( 'sticky_posts' );
+
+        // ready for paginating custom query
+        $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+
 		$args = array(
 			'posts_per_page' => 4,
 			'post__in'  => $sticky,
@@ -53,7 +57,12 @@ get_header() ?>
 
 
 		// get posts that are not sticky
-		$query = new WP_Query( array( 'post__not_in' => get_option( 'sticky_posts' ) ) );
+		$query = new WP_Query( 
+			array( 
+				'post__not_in' => get_option( 'sticky_posts' ),
+				'paged' => $paged
+				) 
+			);
 
 
 		// loop throgh them
@@ -68,7 +77,17 @@ get_header() ?>
 
 			endwhile;
 
-		endif;
+		else:
+			?>
+
+			<h1 class="page-title text-center not-found"><i class="fa fa-fire-extinguisher red"></i> <?php _e( 'Ready to Bloging?', 'beautiful' ); ?></h1>
+			<p class="text-center">
+				<?php _e( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'beautiful' ); ?>
+				<br />
+			</p>
+			
+			<?php
+		endif; 
 
 		// reset previous query
 		wp_reset_query();
@@ -77,7 +96,5 @@ get_header() ?>
 </section>
 
 <?php beautiful_blog_navigation(); ?>
-
-</section>
 
 <?php get_footer() ?>

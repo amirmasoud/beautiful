@@ -35,6 +35,7 @@ See http://codex.wordpress.org/Right_to_Left_Language_Support
  * -----------------------------------------------------------------------------
  */
 
+/* B Yekan - Persian Font */
 @import url(http://awebfont.ir/css?id=1116&mode=wetso);
 
 body {
@@ -70,6 +71,11 @@ body {
 	float: right;
 }
 
+/* Search in the header */
+.search-container {
+	padding: 8px;
+}
+
 /**
  * 5.0 Navigation
  * -----------------------------------------------------------------------------
@@ -88,6 +94,10 @@ body {
 
 .single-title {
 	text-align: right;
+}
+
+#mCSB_1_scrollbar_vertical {
+	right: 8px;
 }
 
 .blog-post {
@@ -206,8 +216,8 @@ body {
 }
 aside.sidebar
 {
-	width: 0;
-	position: absolute;
+	width: 400px;
+	position: fixed;
 	padding: 12px 0px;
 	left: -400px;
 	right: inherit;
@@ -217,7 +227,14 @@ aside.sidebar
 	color: #FFF;
 	overflow: scroll;
 	overflow-x: hidden;
-	min-height: 100%;
+	overflow-x: hidden;
+	overflow: scroll;
+	height: 100%;
+	margin-left: 0px;
+}
+
+aside.sidebar::-webkit-scrollbar {
+	display: none;
 }
 
 /**

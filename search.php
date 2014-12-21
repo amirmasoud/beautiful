@@ -25,13 +25,24 @@ get_header(); ?>
 				// display each post
 				beautiful_blog_post();
 		endwhile;
+	else:
+		?>
+
+		<h1 class="page-title text-center not-found"><i class="fa fa-fire-extinguisher red"></i> <?php _e( 'Not Found', 'beautiful' ); ?></h1>
+		<p class="text-center">
+			<?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'beautiful' ); ?>
+			<br />
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				<i class="fa fa-home"> </i> <?php _e( 'Back to home', 'beautiful' ); ?>
+			</a>
+		</p>
+		
+		<?php
 	endif; 
 	?>
 
 </section>
 
 <?php beautiful_blog_navigation(); ?>
-
-</section>
 
 <?php get_footer() ?>

@@ -1,35 +1,9 @@
 <?php
-// bootstrap walker for navigation
-require_once('inc/wp_bootstrap_navwalker.php');
-
-if( ! function_exists( 'beautiful_setup' ) ) :
-
-	function beautiful_setup() {
-
-		/*
-		 * Make beautiful for translation.
-		 *
-		 * Translations can be added to the /languages/ directory.
-	     * 
-		 */
-		load_theme_textdomain( 'beautiful', get_template_directory() . '/languages' );
-
-		// This theme styles the visual editor to resemble the theme style.
-		add_editor_style( array( 'css/editor-style.css' ) );
-
-		// Add RSS feed links to <head> for posts and comments.
-		add_theme_support( 'automatic-feed-links' );
-
-		// theme suport for for serach from
-		add_theme_support( 'html5', array( 'search-form' ) );
-
-		// Enable support for Post Thumbnails, and declare one sizes.
-		add_theme_support( 'post-thumbnails' );
-		set_post_thumbnail_size( 480, 480, true );
-
-	    // register top navbar menu
-		register_nav_menu( 'primary', 'Primary Menu' );
-
+/**
+ * register sidebars
+ * @return null
+ */
+function beautiful_register_sidebar() {
 	    // register sidebars
 	    // 
 	    // index page sidebar
@@ -84,6 +58,44 @@ if( ! function_exists( 'beautiful_setup' ) ) :
 	        'after_title'   => '</h1>',
 	    ) );
 
+}
+
+add_action( 'widgets_init', 'beautiful_register_sidebar' );
+
+
+if( ! function_exists( 'beautiful_setup' ) ) :
+
+	function beautiful_setup() {
+
+		/*
+		 * Make beautiful for translation.
+		 *
+		 * Translations can be added to the /languages/ directory.
+	     * 
+		 */
+		load_theme_textdomain( 'beautiful', get_template_directory() . '/languages' );
+
+		// This theme styles the visual editor to resemble the theme style.
+		add_editor_style( array( 'css/editor-style.css' ) );
+
+		// Add RSS feed links to <head> for posts and comments.
+		add_theme_support( 'automatic-feed-links' );
+
+		// theme suport for for serach from
+		add_theme_support( 'html5', array( 'search-form' ) );
+
+		// Enable support for Post Thumbnails, and declare one sizes.
+		add_theme_support( 'post-thumbnails' );
+
+		// Enable Title Tag
+		add_theme_support( 'title-tag' );
+
+		add_image_size('beautiful-box', 480, 480, true);
+
+		// hide admin bar
+		add_filter('show_admin_bar', '__return_false');
+
+
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
@@ -125,9 +137,14 @@ function beautiful_scripts() {
 	// Add bootstrap, used in the main stylesheet.
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array() );	
 
+	// Add Animation.css
+	wp_enqueue_style( 'beautiful-animation', get_template_directory_uri() . '/css/animate.css');
+
+	// Sidebar scrollbar
+	wp_enqueue_style( 'perfect-scrollbar', get_template_directory_uri() . '/css/perfect-scrollbar.min.css');
+
 	// Load our main stylesheet.
 	wp_enqueue_style( 'beautiful-style', get_stylesheet_uri());
-	wp_enqueue_style( 'beautiful-animation', get_template_directory_uri() . '/css/animate.css');
 
 	// load comment reply script
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -137,14 +154,17 @@ function beautiful_scripts() {
 	// load bootstrap js
 	wp_enqueue_script( 'bootstrap-script', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ) );
 
-	// load textfill js, for font size at front page
-	wp_enqueue_script( 'beautiful-textfill', get_template_directory_uri() . '/js/jquery.textfill.min.js');
+	// load sidebar scrollbar js
+	wp_enqueue_script( 'perfect-scrollbar', get_template_directory_uri() . '/js/perfect-scrollbar.min.js', array( 'jquery' ) );
+
+	// load TextFill js, for font size at front page
+	wp_enqueue_script( 'beautiful-fittext', get_template_directory_uri() . '/js/jquery.textfill.min.js');
 
 	// load our custom js
 	if( !is_rtl() )
-		wp_enqueue_script( 'beautiful-script', get_template_directory_uri() . '/js/functions.js', array( 'beautiful-textfill', 'bootstrap-script' ) );
+		wp_enqueue_script( 'beautiful-script', get_template_directory_uri() . '/js/functions.js', array( 'beautiful-fittext', 'bootstrap-script' ) );
 	else
-		wp_enqueue_script( 'beautiful-script', get_template_directory_uri() . '/js/functions-rtl.js', array( 'beautiful-textfill', 'bootstrap-script' ) );
+		wp_enqueue_script( 'beautiful-script', get_template_directory_uri() . '/js/functions-rtl.js', array( 'beautiful-fittext', 'bootstrap-script' ) );
 
 
 }
@@ -166,7 +186,7 @@ function bootstrap3_comment_form_fields( $fields ) {
 	$fields = array(
 		'author' => '<div class="form-group comment-form-author col-md-6 col-xs-12">' . '<input class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' placeholder="' . __( 'Name', "beautiful" ) . ( $req ? __( ' (require)', "beautiful" ) : '' ) . '" /></div>',
 		'email' => '<div class="form-group comment-form-email col-md-6 col-xs-12"><input class="form-control" id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' placeholder="' . __( 'Email', "beautiful" ) . ( $req ? __( ' (require)', "beautiful" ) : '' ) . '" /></div>',
-		'url' => '<div class="form-group comment-form-url col-md-12 col-xs-12"><input class="form-control" id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" placeholder="' . __( 'url', "beautiful" ) . ( $req ? __( ' (require)', "beautiful" ) : '' ) . '" /></div>',
+		'url' => '<div class="form-group comment-form-url col-md-12 col-xs-12"><input class="form-control" id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" placeholder="' . __( 'url', "beautiful" ) . '" /></div>',
 	);
 
 	return $fields;
@@ -295,31 +315,54 @@ function beautiful_watermark($post_format) {
  */
 function beautiful_blog_post() {
 
-	if(get_the_post_thumbnail() != '') : ?>	
+	$thumb_id = get_post_thumbnail_id( );
+	$thumb_url_array = wp_get_attachment_image_src( $thumb_id, 'beautiful-box' );
+	if( ( '' != get_the_post_thumbnail() ) &&
+		( $thumb_url_array[1] == $thumb_url_array[2] ) &&
+		( $thumb_url_array[1] == 480 )) : ?>	
 
 		<div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-3 col-md-4 col-xs-6 blog-post blog-thumbnail'); ?>>
 			<a class="post-link" rel="<?php the_ID(); ?>" href="<?php echo esc_url( the_permalink() ) ?>">
-
-				<?php the_post_thumbnail(); ?>
-
+				<?php the_post_thumbnail('beautiful-box'); ?>
 				<div class="box-caption animate">
-					<span class="animate"><?php the_title(); ?><br /><small class="continue animate"><?php _e("continue...", "beautiful") ?></small></span>
+					<h1 class="animate"><?php the_title() ?></h1>
+					<small class="continue animate"><?php _e("continue...", "beautiful") ?></small>
+					<div class="watermark"><?php beautiful_watermark( get_post_format() ) ?></div>
+				</div>
+
+			</a>
+		</div>
+	<?php elseif( ( '' != get_the_post_thumbnail() ) &&
+				( $thumb_url_array[1] != $thumb_url_array[2] ) ||
+				( $thumb_url_array[1] != 480 )) : ?>
+
+		<div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-3 col-md-4 col-xs-6 blog-post')?>>
+			<a class="post-link" rel="<?php the_ID(); ?>" href="<?php echo esc_url( get_permalink() ) ?>">
+				
+				<?php // just a transparent background ?>
+				<img src="<?php echo get_template_directory_uri() ?>/images/bg.png" alt="default-bg">
+
+				<div class="box-caption">
+					<h1 class="animate"><?php the_title() ?></h1>
+					<small class="continue animate"><?php _e("continue...", "beautiful") ?></small>
 					<div class="watermark"><?php beautiful_watermark( get_post_format() ) ?></div>
 				</div>
 
 			</a>
 		</div>
 
+				
 	<?php else: ?>
 
 		<div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-3 col-md-4 col-xs-6 blog-post')?>>
-			<a class="post-link" rel="<?php the_ID(); ?>" href="<?php echo esc_url( get_permalink() ) ?>" data-title="<?php the_title() ?>">
+			<a class="post-link" rel="<?php the_ID(); ?>" href="<?php echo esc_url( get_permalink() ) ?>">
 				
 				<?php // just a transparent background ?>
-				<img src="<?php echo get_template_directory_uri() ?>/images/bg.png">
+				<img src="<?php echo get_template_directory_uri() ?>/images/bg.png" alt="default-bg">
 
 				<div class="box-caption">
-					<span><?php the_title(); ?><br /><small class="continue animate"><?php _e("continue...", "beautiful") ?></small></span>
+					<h1 class="animate"><?php the_title() ?></h1>
+					<small class="continue animate"><?php _e("continue...", "beautiful") ?></small>
 					<div class="watermark"><?php beautiful_watermark( get_post_format() ) ?></div>
 				</div>
 
@@ -357,3 +400,61 @@ function beautiful_post_navigation() {
 	<?php
 	endif;
 }// function beautiful_post_navigation
+
+
+/**
+ * showing/hiding header items
+ * @return menu/search
+ */
+function beautiful_header_sh() {
+	// if sidebar is not empty
+	if( is_active_sidebar( 'sidebar-1' ) ) :
+		if( is_rtl() ) : ?>
+			<div class="col-md-1 col-xs-6 menu animate">
+				<span class="open-menu"><i class="fa fa-bars"></i></span>
+				<span class="close-menu"><i class="fa fa-times"></i></span>
+			</div>
+			<div class="col-md-1 col-xs-6 search-icon animate text-center">
+				<span><i class="fa fa-search text-center"></i></span>
+			</div>
+			<div class="col-md-10 col-xs-12 animated">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo-link" rel="home">
+					<div class="logo animated"><?php bloginfo('name') ?></div>
+				</a>
+			</div>
+		<?php else : ?>
+			<div class="col-md-10 col-xs-12 animate">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo-link" rel="home">
+					<div class="logo animated"><?php bloginfo('name') ?></div>
+				</a>
+			</div>
+			<div class="col-md-1 col-xs-6 search-icon animate text-center">
+				<span><i class="fa fa-search text-center"></i></span>
+			</div>
+			<div class="col-md-1 col-xs-6 menu animate">
+				<span class="open-menu"><i class="fa fa-bars"></i></span>
+				<span class="close-menu"><i class="fa fa-times"></i></span>
+			</div>
+		<?php endif;
+	else:
+		if( is_rtl() ) : ?>
+			<div class="col-md-2 col-xs-12 search-icon animate text-center">
+				<span><i class="fa fa-search text-center"></i></span>
+			</div>
+			<div class="col-md-10 col-xs-12 animated">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo-link" rel="home">
+					<div class="logo animated"><?php bloginfo('name') ?></div>
+				</a>
+			</div>
+		<?php else : ?>
+			<div class="col-md-10 col-xs-12 animate">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo-link" rel="home">
+					<div class="logo animated"><?php bloginfo('name') ?></div>
+				</a>
+			</div>
+			<div class="col-md-2 col-xs-12 search-icon animate text-center">
+				<span><i class="fa fa-search text-center"></i></span>
+			</div>
+		<?php endif;
+	endif;
+}
