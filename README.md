@@ -19,15 +19,7 @@ For Developers: git clone https://github.com/amirmasoud/Beautiful
 <h2>Follow me</h2>
 
 
-<a href="http://blog.chakosh.ir/">About Me</a>
-
 <a href="http://chakosh.ir">Blog(Persian)</a>
-
-<a href="http://twitter.com/ChakoshDev">Twitter</a>
-
-<a href="http://facebook.com/ChakoshDev">Facebook</a>
-
-<a href="http://instagram.com/amirmasoud32">Instagram</a>
 
 Thank you for supporting :)
 
@@ -71,3 +63,7 @@ bug fixes
 1.0.9
 logo overflow fixed
 sidebar Scroll fixed
+
+1.1
+customize panel added
+bug fix
