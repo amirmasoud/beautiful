@@ -26,6 +26,7 @@ function beautiful_theme_setting( $wp_customize ) {
       * 
       */
     $wp_customize->add_setting( 'beautiful_genral_font' , array(
+          'sanitize_callback' == 'esc_url_raw',
         'default' => 'Open Sans'
     ) );
     $wp_customize->add_control(
@@ -695,6 +696,7 @@ function beautiful_theme_setting( $wp_customize ) {
       * 
       */
     $wp_customize->add_setting( 'beautiful_header_font' , array(
+          'sanitize_callback' == 'esc_url_raw',
         'default' => 'Open Sans'
     ) );
     $wp_customize->add_control(
@@ -1363,6 +1365,7 @@ function beautiful_theme_setting( $wp_customize ) {
       * 
       */
     $wp_customize->add_setting( 'beautiful_favicon' , array(
+          'sanitize_callback' == 'esc_url_raw',
     ) );
     $wp_customize->add_control(
         new WP_Customize_Image_Control(
@@ -1381,6 +1384,7 @@ function beautiful_theme_setting( $wp_customize ) {
      *    Links Color
      */
     $wp_customize->add_setting( 'beautiful_link_color' , array(
+          'sanitize_callback' == 'esc_url_raw',
         'default' => '#333'
     ) );
     $wp_customize->add_control(
@@ -1402,6 +1406,7 @@ function beautiful_theme_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_link_color_hover' , array(
+          'sanitize_callback' == 'esc_url_raw',
         'default' => '#009CB9'
     ) );
     $wp_customize->add_control(
@@ -1424,6 +1429,7 @@ function beautiful_theme_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_post_font_color' , array(
+          'sanitize_callback' == 'esc_url_raw',
         'default' => '#333'
     ) );
     $wp_customize->add_control(

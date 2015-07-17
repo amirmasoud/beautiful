@@ -31,6 +31,7 @@ function beautiful_header_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_logo_animation' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'shake'
     ) );
     $wp_customize->add_control(
@@ -102,6 +103,7 @@ function beautiful_header_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_logo_color' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => "#333"
     ) );
     $wp_customize->add_control(
@@ -122,6 +124,7 @@ function beautiful_header_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_header_background' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'color'
     ) );
     $wp_customize->add_control(
@@ -147,6 +150,7 @@ function beautiful_header_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_header_background_image' , array(
+        'sanitize_callback' == 'esc_url_raw',
     ) );
     $wp_customize->add_control(
         new WP_Customize_Image_Control(
@@ -166,6 +170,7 @@ function beautiful_header_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_header_background_color' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => '#FFF'
     ) );
     $wp_customize->add_control(
@@ -186,6 +191,7 @@ function beautiful_header_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_header_font_color' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => '#DDD'
     ) );
     $wp_customize->add_control(
@@ -206,6 +212,7 @@ function beautiful_header_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_header_border_color' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => '#DDD'
     ) );
     $wp_customize->add_control(

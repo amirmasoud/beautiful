@@ -30,6 +30,7 @@ function beautiful_footer_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_footer_style' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'custom'
     ) );
     $wp_customize->add_control(
@@ -58,6 +59,7 @@ function beautiful_footer_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_list_1' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'rgba(129, 162, 87, 0.9)'
     ) );
     $wp_customize->add_control(
@@ -79,6 +81,7 @@ function beautiful_footer_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_list_2' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'rgba(64, 162, 175, 0.9)'
     ) );
     $wp_customize->add_control(
@@ -100,6 +103,7 @@ function beautiful_footer_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_list_3' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'rgba(64, 122, 175, 0.9)'
     ) );
     $wp_customize->add_control(
@@ -121,6 +125,7 @@ function beautiful_footer_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_list_4' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'rgba(108, 58, 196, 0.9)'
     ) );
     $wp_customize->add_control(
@@ -142,6 +147,7 @@ function beautiful_footer_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_list_5' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'rgba(157, 64, 175, 0.9)'
     ) );
     $wp_customize->add_control(
@@ -163,6 +169,7 @@ function beautiful_footer_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_list_6' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'rgba(175, 64, 100, 0.9)'
     ) );
     $wp_customize->add_control(
@@ -184,6 +191,7 @@ function beautiful_footer_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_list_7' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'rgba(162, 175, 64, 0.9)'
     ) );
     $wp_customize->add_control(
@@ -205,6 +213,7 @@ function beautiful_footer_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_list_8' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'rgba(192, 117, 57, 0.9)'
     ) );
     $wp_customize->add_control(
@@ -226,6 +235,7 @@ function beautiful_footer_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_list_9' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'rgba(112, 112, 112, 0.9)'
     ) );
     $wp_customize->add_control(
@@ -247,6 +257,7 @@ function beautiful_footer_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_list_10' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'rgba(32, 109, 106, 0.9)'
     ) );
     $wp_customize->add_control(
@@ -269,6 +280,7 @@ function beautiful_footer_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_list_11' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'rgba(68, 175, 64, 0.9)'
     ) );
     $wp_customize->add_control(
@@ -290,6 +302,7 @@ function beautiful_footer_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_list_12' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'rgba(112, 117, 173, 0.9)'
     ) );
 
@@ -312,6 +325,7 @@ function beautiful_footer_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_widget_link_color' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => '#FFF'
     ) );
 
@@ -334,6 +348,7 @@ function beautiful_footer_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_widget_link_color_hover' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => '#333'
     ) );
 
@@ -356,6 +371,7 @@ function beautiful_footer_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_same_color_footer' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'rgba(64, 122, 175, 0.9)'
     ) );
     $wp_customize->add_control(
@@ -376,6 +392,7 @@ function beautiful_footer_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_spectrum_diff_footer' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => '2'
     ) );
     $wp_customize->add_control(
@@ -397,6 +414,7 @@ function beautiful_footer_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_widget_background' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => '#333'
     ) );
     $wp_customize->add_control(
@@ -417,6 +435,7 @@ function beautiful_footer_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_widget_main_color' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => '#FFF'
     ) );
     $wp_customize->add_control(
@@ -437,6 +456,7 @@ function beautiful_footer_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_widget_header_color' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => '#FFF'
     ) );
     $wp_customize->add_control(

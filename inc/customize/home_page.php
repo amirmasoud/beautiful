@@ -29,6 +29,7 @@ function beautiful_home_page_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_homepage_style' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'custom'
     ) );
     $wp_customize->add_control(
@@ -57,6 +58,7 @@ function beautiful_home_page_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_box_1' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'rgba(129, 162, 87, 0.9)'
     ) );
     $wp_customize->add_control(
@@ -78,6 +80,7 @@ function beautiful_home_page_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_box_2' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'rgba(64, 162, 175, 0.9)'
     ) );
     $wp_customize->add_control(
@@ -99,6 +102,7 @@ function beautiful_home_page_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_box_3' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'rgba(64, 122, 175, 0.9)'
     ) );
     $wp_customize->add_control(
@@ -120,6 +124,7 @@ function beautiful_home_page_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_box_4' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'rgba(108, 58, 196, 0.9)'
     ) );
     $wp_customize->add_control(
@@ -141,6 +146,7 @@ function beautiful_home_page_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_box_5' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'rgba(157, 64, 175, 0.9)'
     ) );
     $wp_customize->add_control(
@@ -162,6 +168,7 @@ function beautiful_home_page_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_box_6' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'rgba(175, 64, 100, 0.9)'
     ) );
     $wp_customize->add_control(
@@ -183,6 +190,7 @@ function beautiful_home_page_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_box_7' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'rgba(162, 175, 64, 0.9)'
     ) );
     $wp_customize->add_control(
@@ -204,6 +212,7 @@ function beautiful_home_page_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_box_8' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'rgba(192, 117, 57, 0.9)'
     ) );
     $wp_customize->add_control(
@@ -225,6 +234,7 @@ function beautiful_home_page_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_box_9' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'rgba(112, 112, 112, 0.9)'
     ) );
     $wp_customize->add_control(
@@ -246,6 +256,7 @@ function beautiful_home_page_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_box_10' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'rgba(32, 109, 106, 0.9)'
     ) );
     $wp_customize->add_control(
@@ -267,6 +278,7 @@ function beautiful_home_page_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_box_11' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'rgba(68, 175, 64, 0.9)'
     ) );
     $wp_customize->add_control(
@@ -288,6 +300,7 @@ function beautiful_home_page_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_box_12' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => 'rgba(112, 117, 173, 0.9)'
     ) );
     $wp_customize->add_control(
@@ -310,6 +323,7 @@ function beautiful_home_page_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_same_color' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => '#FFF'
     ) );
     $wp_customize->add_control(
@@ -330,6 +344,7 @@ function beautiful_home_page_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_spectrum_diff' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => '2'
     ) );
     $wp_customize->add_control(
@@ -351,6 +366,7 @@ function beautiful_home_page_setting( $wp_customize ) {
      * 
      */
     $wp_customize->add_setting( 'beautiful_box_font_color' , array(
+        'sanitize_callback' == 'esc_url_raw',
         'default' => '#FFF'
     ) );
     $wp_customize->add_control(
