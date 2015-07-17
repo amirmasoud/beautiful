@@ -4,7 +4,7 @@ Theme URI: https://github.com/amirmasoud/Beautiful
 Author: AmirMasoud Sheidayi
 Author URI: http://chakosh.ir/
 Description: colorful responsive simple theme created for creativity, built with twitter bootstrap 3, remember to regenerate your thumbnails, use image larger or equal than 480×480 pixel for thumbnail, use this theme for your arts and photos, NOTICE: This theme will not show thumbnails that are less than 480×480 Pixel
-Version: 1.0.9
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, blue, gray, green, orange, pink, purple, red, silver, white, dark, light, one-column, two-columns, three-columns, four-columns, responsive-layout, custom-background, custom-menu, editor-style, featured-images, flexible-header, full-width-template, post-formats, rtl-language-support, sticky-post, translation-ready, buddypress
@@ -1529,6 +1529,7 @@ aside.sidebar::-webkit-scrollbar {
 	border-radius: 4px;
 	margin: 4px;
 	display: inline-block;
+	word-wrap: normal;
 }
 
 /* List Style Widgets*/

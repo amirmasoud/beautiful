@@ -31,7 +31,7 @@ jQuery(document).ready(function($){
 		$("aside.sidebar").animate({right: "-400px"});
 		$(".close-menu").animate({top: "-120px"}, 300);
 		$(".open-menu").animate({top: 0}, 300);
-		$(".main-wrapper").animate({right: 0});
+		//$(".main-wrapper").animate({right: 0});
 	}
 
 	/**
@@ -43,7 +43,7 @@ jQuery(document).ready(function($){
 		$("aside.sidebar").animate({right: "0px"});
 		$(".open-menu").animate({top: "-120px"}, 300);
 		$(".close-menu").animate({top: 0}, 300);
-		$(".main-wrapper").animate({right: "400px"}, 300);
+		//$(".main-wrapper").animate({right: "400px"}, 300);
 	}
 
 	// make space, half space

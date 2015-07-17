@@ -1,5 +1,16 @@
 <?php
 /**
+ * Backend codes.
+ */
+require_once('inc/backend/beautiful.inc.php');
+require_once('inc/backend/header.inc.php');
+require_once('inc/backend/content.inc.php');
+require_once('inc/backend/footer.inc.php');
+
+// customizer panel
+require_once('inc/customize/customize.php');
+
+/**
  * register sidebars
  * @return null
  */
@@ -169,6 +180,16 @@ function beautiful_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'beautiful_scripts' );
+
+/**
+ * register js for admin section
+ * @return null
+ */
+function beautiful_admin_scripts() {
+	wp_enqueue_script( 'beautiful-customize', get_template_directory_uri() . '/inc/customize/js/customize.js' );
+	//wp_enqueue_style( 'beautiful-style_admin', get_template_directory_uri() . '/inc/backend/customize.css' );
+}
+add_action( 'admin_enqueue_scripts', 'beautiful_admin_scripts' );
 
 
 // replace default comment forms with bootstrap forms
