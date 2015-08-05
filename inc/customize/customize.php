@@ -19,12 +19,13 @@ function beautiful_customizer_css() {
 ?>
 
 <style type="text/css">
-<?php if( ! empty(get_theme_mod("beautiful_genral_font")) ) : ?>
-    @import url(http://fonts.googleapis.com/css?family=<?php echo get_theme_mod("beautiful_genral_font") ?>);
+<?php $beautiful_genral_font = get_theme_mod("beautiful_genral_font") ?>
+<?php if(!  empty($beautiful_genral_font) ) : ?>
+    @import url(http://fonts.googleapis.com/css?family=<?php echo $beautiful_genral_font ?>);
 <?php endif ?>
 
-<?php if( ! empty(get_theme_mod("beautiful_header_font")) ) : ?>
-    @import url(http://fonts.googleapis.com/css?family=<?php echo get_theme_mod("beautiful_header_font") ?>);
+<?php if( ! empty($beautiful_genral_font) ) : ?>
+    @import url(http://fonts.googleapis.com/css?family=<?php echo $beautiful_genral_font ?>);
 <?php endif ?>
 
 body {

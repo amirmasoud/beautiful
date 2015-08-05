@@ -67,3 +67,6 @@ sidebar Scroll fixed
 1.1
 customize panel added
 bug fix
+
+1.1.1
+fix empty fatal error on server with php version less than 5.5 on inc/customize.php
