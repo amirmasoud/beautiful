@@ -20,7 +20,7 @@ if( !class_exists("beautiful_header") ) :
 		function __construct()
 		{
 			// get logo state, text or image
-			$this->beautiful_logo = get_theme_mod("beautiful_logo");
+			$this->beautiful_logo = esc_attr (get_theme_mod("beautiful_logo") );
 		}
 
 		/**
@@ -29,7 +29,7 @@ if( !class_exists("beautiful_header") ) :
 		 */
 		public function logo_image() {
 			if( $this->beautiful_logo == "image" )
-				echo "background-image: url('" . get_theme_mod("beautiful_logo_image") . "');";
+				echo "background-image: url('" . esc_attr (get_theme_mod("beautiful_logo_image") ) . "');";
 		}
 
 		/**
@@ -38,7 +38,7 @@ if( !class_exists("beautiful_header") ) :
 		 */
 		public function logo_image_hover() {
 			if( $this->beautiful_logo == "image" )
-				echo "background-image: url('" . get_theme_mod("beautiful_logo_image_hover") . "');";
+				echo "background-image: url('" . esc_attr (get_theme_mod("beautiful_logo_image_hover") ) . "');";
 		}
 
 		/**
@@ -55,8 +55,8 @@ if( !class_exists("beautiful_header") ) :
 		 * @return logo animation
 		 */
 		public function logo_animation() {
-			echo "-webkit-animation-name: " . get_theme_mod("beautiful_logo_animation") . ";";
-			echo "animation-name: " . get_theme_mod("beautiful_logo_animation") . ";";
+			echo "-webkit-animation-name: " . esc_attr (get_theme_mod("beautiful_logo_animation") ) . ";";
+			echo "animation-name: " . esc_attr (get_theme_mod("beautiful_logo_animation") ) . ";";
 		}
 
 		/**
@@ -64,7 +64,7 @@ if( !class_exists("beautiful_header") ) :
 		 * @return logo color on hover
 		 */
 		public function logo_color_hover() {
-			echo "color: " . get_theme_mod("beautiful_logo_color_hover") . " !important;";
+			echo "color: " . esc_attr (get_theme_mod("beautiful_logo_color_hover") ) . " !important;";
 		}
 
 		/**
@@ -72,7 +72,7 @@ if( !class_exists("beautiful_header") ) :
 		 * @return logo color
 		 */
 		public function logo_color() {
-			echo "color: " . get_theme_mod("beautiful_logo_color") . " !important;";
+			echo "color: " . esc_attr (get_theme_mod("beautiful_logo_color") ) . " !important;";
 		}
 
 		/**
@@ -80,7 +80,7 @@ if( !class_exists("beautiful_header") ) :
 		 * @return navbar
 		 */
 		public function navbar() {
-			if( get_theme_mod("beautiful_navbar_visibilty") == "hide" )
+			if( esc_attr (get_theme_mod("beautiful_navbar_visibilty") ) == "hide" )
 				return;
 			/**
 			 * Primary navigation with bootstarp

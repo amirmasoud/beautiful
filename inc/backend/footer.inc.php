@@ -22,8 +22,8 @@ if( !class_exists("beautiful_footer") ) :
         public function spectrum($number) {
 
             // get base color and difference level
-            $color  = get_theme_mod("beautiful_same_color_footer");
-            $diff   = get_theme_mod("beautiful_spectrum_diff_footer");
+            $color  = esc_attr( get_theme_mod("beautiful_same_color_footer") );
+            $diff   = esc_attr( get_theme_mod("beautiful_spectrum_diff_footer") );
 
             // refer to methode in beautiful_core
             echo $this->spectrum_colors($number, $color, $diff);
@@ -45,7 +45,7 @@ if( !class_exists("beautiful_footer") ) :
          */
         public function same_color() {
             // get color
-            $color = get_theme_mod("beautiful_same_color_footer");
+            $color = esc_attr( get_theme_mod("beautiful_same_color_footer") );
 
             // make it transparent 0.9
             $color = $this->hex2rgba($color, 0.9);
@@ -61,7 +61,7 @@ if( !class_exists("beautiful_footer") ) :
          */
     	public function widget($number) {
             // get color of a specefic list item
-    		$color = get_theme_mod("beautiful_list_" . $number);
+    		$color = esc_attr( get_theme_mod("beautiful_list_" . $number) );
 
             // make it transparent 0.9
     		$color = $this->hex2rgba($color, 0.9);

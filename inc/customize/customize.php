@@ -19,7 +19,7 @@ function beautiful_customizer_css() {
 ?>
 
 <style type="text/css">
-<?php $beautiful_genral_font = get_theme_mod("beautiful_genral_font") ?>
+<?php $beautiful_genral_font = esc_attr (get_theme_mod("beautiful_genral_font") ) ?>
 <?php if(!  empty($beautiful_genral_font) ) : ?>
     @import url(http://fonts.googleapis.com/css?family=<?php echo $beautiful_genral_font ?>);
 <?php endif ?>
@@ -29,63 +29,63 @@ function beautiful_customizer_css() {
 <?php endif ?>
 
 body {
-    <?php $google_font = get_theme_mod("beautiful_genral_font"); 
+    <?php $google_font = esc_attr (get_theme_mod("beautiful_genral_font") ); 
     $google_font = explode("+", $google_font);
     $google_font = implode(" ", $google_font);
     ?>
-    font-family: <?php echo get_theme_mod("beautiful_genral_font") ?> ,'Open Sans', sans-serif;
-    color: <?php echo get_theme_mod("beautiful_post_font_color") ?>;
+    font-family: <?php echo esc_attr (get_theme_mod("beautiful_genral_font") ) ?> ,'Open Sans', sans-serif;
+    color: <?php echo esc_attr (get_theme_mod("beautiful_post_font_color") ) ?>;
 }
 
 h1, h2, h3, h4,h5, h6 {
-    font-family: <?php echo get_theme_mod("beautiful_header_font") ?> ,'Open Sans', sans-serif !important;
+    font-family: <?php echo esc_attr (get_theme_mod("beautiful_header_font") ) ?> ,'Open Sans', sans-serif !important;
 }
 
 a {
-    color: <?php echo get_theme_mod("beautiful_link_color") ?>;
+    color: <?php echo esc_attr (get_theme_mod("beautiful_link_color") ) ?>;
 }
 a:hover,
 a:active {
-    color: <?php echo get_theme_mod("beautiful_link_color_hover") ?>;
+    color: <?php echo esc_attr (get_theme_mod("beautiful_link_color_hover") ) ?>;
 }
 
 /* Support a widely-adopted but non-standard selector for text selection styles
  * to achieve a better experience. See http://core.trac.wordpress.org/ticket/25898.
  */
 ::selection {
-    background: <?php echo get_theme_mod("beautiful_link_color_hover") ?>;
-    color: <?php echo get_theme_mod("beautiful_post_font_color") ?>;
+    background: <?php echo esc_attr (get_theme_mod("beautiful_link_color_hover") ) ?>;
+    color: <?php echo esc_attr (get_theme_mod("beautiful_post_font_color") ) ?>;
 }
 
 ::-moz-selection {
-    background: <?php echo get_theme_mod("beautiful_link_color_hover") ?>;
-    color: <?php echo get_theme_mod("beautiful_post_font_color") ?>;
+    background: <?php echo esc_attr (get_theme_mod("beautiful_link_color_hover") ) ?>;
+    color: <?php echo esc_attr (get_theme_mod("beautiful_post_font_color") ) ?>;
 }
 
 ::-webkit-input-placeholder {
-    color: <?php echo get_theme_mod("beautiful_post_font_color") ?>;
+    color: <?php echo esc_attr (get_theme_mod("beautiful_post_font_color") ) ?>;
 }
 
 :-moz-placeholder {
-    color: <?php echo get_theme_mod("beautiful_post_font_color") ?>;
+    color: <?php echo esc_attr (get_theme_mod("beautiful_post_font_color") ) ?>;
 }
 
 ::-moz-placeholder {
-    color: <?php echo get_theme_mod("beautiful_post_font_color") ?>;
+    color: <?php echo esc_attr (get_theme_mod("beautiful_post_font_color") ) ?>;
 }
 
 :-ms-input-placeholder {
-    color: <?php echo get_theme_mod("beautiful_post_font_color") ?>;
+    color: <?php echo esc_attr (get_theme_mod("beautiful_post_font_color") ) ?>;
 }
 
 header.row {
-    <?php if( get_theme_mod("beautiful_header_background") == "image" ) : ?>
-        background: url("<?php echo get_theme_mod('beautiful_header_background_image') ?>") repeat repeat center;
+    <?php if( esc_attr (get_theme_mod("beautiful_header_background") ) == "image" ) : ?>
+        background: url("<?php echo esc_attr (get_theme_mod('beautiful_header_background_image') ) ?>") repeat repeat center;
     <?php else: ?>
-        background-color: <?php echo get_theme_mod("beautiful_header_background_color") ?>;
+        background-color: <?php echo esc_attr (get_theme_mod("beautiful_header_background_color") ) ?>;
     <?php endif; ?>
-    color: <?php echo get_theme_mod("beautiful_header_font_color") ?>;
-    border-bottom: 1px solid <?php echo get_theme_mod("beautiful_header_border_color") ?>;
+    color: <?php echo esc_attr (get_theme_mod("beautiful_header_font_color") ) ?>;
+    border-bottom: 1px solid <?php echo esc_attr (get_theme_mod("beautiful_header_border_color") ) ?>;
 }
 
 .logo {
@@ -94,16 +94,16 @@ header.row {
 }
 
 #search {
-    color: <?php echo get_theme_mod("beautiful_post_main_color") ?>;
+    color: <?php echo esc_attr (get_theme_mod("beautiful_post_main_color") ) ?>;
 }
 
 <?php $beautiful_content = new beautiful_content() ?>
 
-<?php if( get_theme_mod("beautiful_homepage_style") == "same_color" ) : ?>
+<?php if( esc_attr (get_theme_mod("beautiful_homepage_style") ) == "same_color" ) : ?>
 .content-area .blog-post .box-caption {
     background: <?php $beautiful_content->same_color() ?> !important;
 }
-<?php elseif( get_theme_mod("beautiful_homepage_style") == "spectrum" ) : ?>
+<?php elseif( esc_attr (get_theme_mod("beautiful_homepage_style") ) == "spectrum" ) : ?>
 .content-area .blog-post:nth-child(12n) .box-caption {
     background: <?php $beautiful_content->spectrum(1) ?> !important;
 }
@@ -140,7 +140,7 @@ header.row {
 .content-area .blog-post:nth-child(12n+11) .box-caption {
     background: <?php $beautiful_content->spectrum(12) ?> !important;
 }
-<?php elseif( get_theme_mod("beautiful_homepage_style") == "custom" ) : ?>
+<?php elseif( esc_attr (get_theme_mod("beautiful_homepage_style") ) == "custom" ) : ?>
 .content-area .blog-post:nth-child(12n) .box-caption {
     background: <?php $beautiful_content->box(1) ?> !important;
 }
@@ -218,32 +218,32 @@ header.row {
 
 .continue, .box-caption
 {
-    color: <?php echo get_theme_mod("beautiful_box_font_color") ?>;
+    color: <?php echo esc_attr (get_theme_mod("beautiful_box_font_color") ) ?>;
 }
 
 .title-wrapper, .post-navigation, .post-meta-info, .single-content, .breadcrumb
 {
-    border-bottom: 1px solid <?php echo get_theme_mod("beautiful_post_main_color") ?>;
+    border-bottom: 1px solid <?php echo esc_attr (get_theme_mod("beautiful_post_main_color") ) ?>;
 }
 
 .post-meta-info .col-md-3,
 .post-meta-info .col-md-4
 {
-    border-left: 1px solid <?php echo get_theme_mod("beautiful_post_main_color") ?>;
+    border-left: 1px solid <?php echo esc_attr (get_theme_mod("beautiful_post_main_color") ) ?>;
 }
 
 
 .single-title {
-    color: <?php echo get_theme_mod( "beautiful_single_content_header_color" ) ?>;
+    color: <?php echo esc_attr (get_theme_mod( "beautiful_single_content_header_color" ) ) ?>;
 }
 
 .single-content, .breadcrumb {
-    background-color: <?php echo get_theme_mod( "beautiful_single_content_background" ) ?>;
-    color: <?php echo get_theme_mod( "beautiful_single_content_color" ) ?>;
+    background-color: <?php echo esc_attr (get_theme_mod( "beautiful_single_content_background" ) ) ?>;
+    color: <?php echo esc_attr (get_theme_mod( "beautiful_single_content_color" ) ) ?>;
 }
 
 .breadcrumb li {
-    color: color: <?php echo get_theme_mod( "beautiful_single_content_header_color" ) ?>;
+    color: color: <?php echo esc_attr (get_theme_mod( "beautiful_single_content_header_color" ) ) ?>;
 }
 
 
@@ -267,73 +267,73 @@ header.row {
 }
 
 .page-links a {
-    color: <?php echo get_theme_mod("beautiful_link_color") ?>;
+    color: <?php echo esc_attr (get_theme_mod("beautiful_link_color") ) ?>;
 }
 
 .page-links a:hover {
-    color: <?php echo get_theme_mod("beautiful_link_color_hover") ?>;
+    color: <?php echo esc_attr (get_theme_mod("beautiful_link_color_hover") ) ?>;
 }
 
 .post-navigation .col-xs-6,
 .blog-navigation .col-xs-6
 {
-    border-left: 1px solid <?php echo get_theme_mod("beautiful_post_main_color") ?>;
+    border-left: 1px solid <?php echo esc_attr (get_theme_mod("beautiful_post_main_color") ) ?>;
 }
 
 .not-found {
-    text-shadow: 1px 1px 1px <?php echo get_theme_mod("beautiful_post_main_color") ?>;
+    text-shadow: 1px 1px 1px <?php echo esc_attr (get_theme_mod("beautiful_post_main_color") ) ?>;
 }
 
 
 .no-comments, .pingback
 {
-    border-top: 1px solid <?php echo get_theme_mod("beautiful_post_main_color") ?>;
-    border-bottom: 1px solid <?php echo get_theme_mod("beautiful_post_main_color") ?>;
+    border-top: 1px solid <?php echo esc_attr (get_theme_mod("beautiful_post_main_color") ) ?>;
+    border-bottom: 1px solid <?php echo esc_attr (get_theme_mod("beautiful_post_main_color") ) ?>;
 }
 .commentlist .reply {}
 .reply a 
 {
-    border: 1px solid <?php echo get_theme_mod("beautiful_post_main_color") ?>;
+    border: 1px solid <?php echo esc_attr (get_theme_mod("beautiful_post_main_color") ) ?>;
 }
 
 .comment-meta
 {
-    border-bottom: 1px solid <?php echo get_theme_mod("beautiful_post_main_color") ?>;
-    border-top: 1px solid <?php echo get_theme_mod("beautiful_post_main_color") ?>;
+    border-bottom: 1px solid <?php echo esc_attr (get_theme_mod("beautiful_post_main_color") ) ?>;
+    border-top: 1px solid <?php echo esc_attr (get_theme_mod("beautiful_post_main_color") ) ?>;
 }
 
 .bypostauthor {}
 .comment-author-admin .comment-author .fa-star
 {
-    color: <?php echo get_theme_mod("beautiful_post_main_color") ?>;
+    color: <?php echo esc_attr (get_theme_mod("beautiful_post_main_color") ) ?>;
 }
 .comment-author {
-    border-right: 1px solid <?php echo get_theme_mod("beautiful_post_main_color") ?>;
+    border-right: 1px solid <?php echo esc_attr (get_theme_mod("beautiful_post_main_color") ) ?>;
 }
 
 #respond input, #respond textarea
 {
-    color: <?php echo get_theme_mod("beautiful_post_font_color") ?>;
-    border: 1px solid <?php echo get_theme_mod("beautiful_post_main_color") ?>;
+    color: <?php echo esc_attr (get_theme_mod("beautiful_post_font_color") ) ?>;
+    border: 1px solid <?php echo esc_attr (get_theme_mod("beautiful_post_main_color") ) ?>;
 }
 #author
 {
-    border-right: 1px solid <?php echo get_theme_mod("beautiful_post_main_color") ?> !important;
+    border-right: 1px solid <?php echo esc_attr (get_theme_mod("beautiful_post_main_color") ) ?> !important;
 }
 #respond input:focus, #respond textarea:focus, #submit:focus, #respond input[type="submit"]:hover
 {
-    box-shadow: 0 0 5px 1px <?php echo get_theme_mod("beautiful_post_main_color") ?> !important;
+    box-shadow: 0 0 5px 1px <?php echo esc_attr (get_theme_mod("beautiful_post_main_color") ) ?> !important;
 }
 
 aside.sidebar
 {
-    background: <?php echo get_theme_mod("beautiful_widget_background") ?>;
+    background: <?php echo esc_attr (get_theme_mod("beautiful_widget_background") ) ?>;
 }
 
 
 <?php $beautiful_footer = new beautiful_footer() ?>
 
-<?php if( get_theme_mod("beautiful_footer_style") == "custom" ) : ?>
+<?php if( esc_attr (get_theme_mod("beautiful_footer_style") ) == "custom" ) : ?>
 .widget ul li:nth-child(12n), .tagcloud a:nth-child(12n) {
     background: <?php $beautiful_footer->widget(1) ?> !important;
 }
@@ -397,7 +397,7 @@ aside.sidebar
 #calendar_wrap tfoot {
     background: <?php $beautiful_footer->widget(9) ?> !important;
 }
-<?php elseif( get_theme_mod("beautiful_footer_style") == "same_color" ) : ?>
+<?php elseif( esc_attr (get_theme_mod("beautiful_footer_style") ) == "same_color" ) : ?>
 .widget ul li, .tagcloud a {
     background: <?php $beautiful_footer->same_color() ?> !important;
 }
@@ -431,7 +431,7 @@ aside.sidebar
 #calendar_wrap tfoot {
     background: none;
 }
-<?php elseif( get_theme_mod("beautiful_footer_style") == "spectrum" ) : ?>
+<?php elseif( esc_attr (get_theme_mod("beautiful_footer_style") ) == "spectrum" ) : ?>
 .widget ul li:nth-child(12n), .tagcloud a:nth-child(12n) {
     background: <?php $beautiful_footer->spectrum(1) ?> !important;
 }
@@ -563,41 +563,41 @@ aside.sidebar
 <?php endif; ?>
 
 .sidebar-menu a, .widget a ,.widget_calendar tbody a {
-    color: <?php echo get_theme_mod("beautiful_widget_link_color") ?>;
+    color: <?php echo esc_attr (get_theme_mod("beautiful_widget_link_color") ) ?>;
 }
 
 .widget a:hover, a.rsswidget:hover,
 .widget_calendar #prev a:hover,
 .widget_calendar #next a:hover {
-    color: <?php echo get_theme_mod("beautiful_widget_link_color_hover") ?>;
+    color: <?php echo esc_attr (get_theme_mod("beautiful_widget_link_color_hover") ) ?>;
 }
 
 .widget_calendar tbody a:hover {
-    background-color: <?php echo get_theme_mod("beautiful_widget_link_color_hover") ?>;
+    background-color: <?php echo esc_attr (get_theme_mod("beautiful_widget_link_color_hover") ) ?>;
 }
 
 .widget input,
 .widget textarea {
     background-color: #FFF;
-    border: 1px solid <?php echo get_theme_mod("beautiful_post_main_color") ?>;
-    color: <?php echo get_theme_mod("beautiful_post_font_color") ?>;
+    border: 1px solid <?php echo esc_attr (get_theme_mod("beautiful_post_main_color") ) ?>;
+    color: <?php echo esc_attr (get_theme_mod("beautiful_post_font_color") ) ?>;
 }
 
 .widget input:focus,
 .widget textarea:focus {
-    border-top: 1px solid <?php echo get_theme_mod("beautiful_widget_background") ?>;
-    border-bottom: 1px solid <?php echo get_theme_mod("beautiful_widget_background") ?>;
+    border-top: 1px solid <?php echo esc_attr (get_theme_mod("beautiful_widget_background") ) ?>;
+    border-bottom: 1px solid <?php echo esc_attr (get_theme_mod("beautiful_widget_background") ) ?>;
 }
 
 .widget-title,
 .widget-title a {
-    color: <?php echo get_theme_mod("beautiful_widget_header_color") ?>;
+    color: <?php echo esc_attr (get_theme_mod("beautiful_widget_header_color") ) ?>;
 }
 
 footer.footer
 {
-    color: <?php echo get_theme_mod("beautiful_widget_main_color") ?>;
-    background: <?php echo get_theme_mod("beautiful_widget_background") ?>;
+    color: <?php echo esc_attr (get_theme_mod("beautiful_widget_main_color") ) ?>;
+    background: <?php echo esc_attr (get_theme_mod("beautiful_widget_background") ) ?>;
 }
 
 

@@ -70,3 +70,6 @@ bug fix
 
 1.1.1
 fix empty fatal error on server with php version less than 5.5 on inc/customize.php
+
+1.1.2
+add esc_attr to get_theme_mod functions

@@ -433,8 +433,8 @@ if( !class_exists("beautiful_content") ) :
          */
         public function spectrum($number) {
 
-            $color = get_theme_mod("beautiful_same_color");
-            $diff = get_theme_mod("beautiful_spectrum_diff");
+            $color = esc_attr( get_theme_mod("beautiful_same_color") );
+            $diff = esc_attr( get_theme_mod("beautiful_spectrum_diff") );
 
             echo $this->spectrum_colors($number, $color, $diff);
 
@@ -455,7 +455,7 @@ if( !class_exists("beautiful_content") ) :
          */
         public function same_color() {
             // get base color
-            $color = get_theme_mod("beautiful_same_color");
+            $color = esc_attr( get_theme_mod("beautiful_same_color") );
 
             // make it rgba with alpha 0.9
             $color = $this->hex2rgba($color, 0.9);
@@ -470,7 +470,7 @@ if( !class_exists("beautiful_content") ) :
          */
     	public function box($number) {
             // get color
-    		$color = get_theme_mod("beautiful_box_" . $number);
+    		$color = esc_attr( get_theme_mod("beautiful_box_" . $number) );
 
             // make it rgba with alpha 0.9
     		$color = $this->hex2rgba($color, 0.9);
@@ -484,7 +484,7 @@ if( !class_exists("beautiful_content") ) :
          */
         public function get_carousel() {
             // full width carousel
-            if( get_theme_mod("beautiful_homepage_slider_style") == "full_width" ) :
+            if( esc_attr( get_theme_mod("beautiful_homepage_slider_style")  ) == "full_width"  ):
                 echo $this->carousel("home-slider-full-width");
             // half width carousel         
             else:
