@@ -12,7 +12,7 @@ jQuery(document).ready(function($){
 
 	/**
 	 * open search form
-	 * @return {null} 
+	 * @return {null}
 	 */
 	var openSearch = function()
 	{
@@ -29,9 +29,8 @@ jQuery(document).ready(function($){
 	{
 
 		$("aside.sidebar").animate({right: "-400px"});
-		$(".close-menu").animate({top: "-120px"}, 300);
+		$(".close-menu").animate({top: "-130px"}, 300);
 		$(".open-menu").animate({top: 0}, 300);
-		//$(".main-wrapper").animate({right: 0});
 	}
 
 	/**
@@ -61,7 +60,7 @@ jQuery(document).ready(function($){
 	$("input, textarea, select").addClass("form-control");
 	$("#searchform input").removeClass("form-control");
 	$("button").addClass("btn btn-default");
-	
+
 	// comment section
 	$("footer.comment-meta").addClass("row");
 	$(".comment-author, .comment-metadata").addClass("col-md-6");
