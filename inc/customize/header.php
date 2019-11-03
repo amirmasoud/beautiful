@@ -2,9 +2,9 @@
 /**
  *
  * controlers of header section in customize panel
- * 
+ *
  * @author AmirMasoud Sheidayi <amirmasood32@ymail.com>
- * @since Beautiful 1.0 * 
+ * @since Beautiful 1.0 *
  */
 
 
@@ -16,7 +16,7 @@ function beautiful_header_setting( $wp_customize ) {
 	/**
 	 *
 	 *	Add Header Section in customize Page
-	 * 
+	 *
 	 */
     $wp_customize->add_section( 'beautiful_header' , array(
         'title'      => __( 'Header', 'beautiful' ),
@@ -28,10 +28,10 @@ function beautiful_header_setting( $wp_customize ) {
      *	CSS3 Logo Animation
      *
      *  Thanks to http://daneden.github.io/animate.css/
-     * 
+     *
      */
     $wp_customize->add_setting( 'beautiful_logo_animation' , array(
-        'sanitize_callback' == 'esc_url_raw',
+        'sanitize_callback' => 'esc_url_raw',
         'default' => 'shake'
     ) );
     $wp_customize->add_control(
@@ -100,7 +100,7 @@ function beautiful_header_setting( $wp_customize ) {
     /**
      *
      *  Text logo Color
-     * 
+     *
      */
     $wp_customize->add_setting( 'beautiful_logo_color' , array(
         'sanitize_callback' == 'esc_url_raw',
@@ -114,14 +114,14 @@ function beautiful_header_setting( $wp_customize ) {
                 'section'    => 'beautiful_header',
                 'settings'   => 'beautiful_logo_color',
                 'priority'   => 3
-            )  
-        )  
+            )
+        )
     );
 
     /**
      *
      *	Header Background type: Solid or Image
-     * 
+     *
      */
     $wp_customize->add_setting( 'beautiful_header_background' , array(
         'sanitize_callback' == 'esc_url_raw',
@@ -147,7 +147,7 @@ function beautiful_header_setting( $wp_customize ) {
     /**
      *
      *	Upload Background Image
-     * 
+     *
      */
     $wp_customize->add_setting( 'beautiful_header_background_image' , array(
         'sanitize_callback' == 'esc_url_raw',
@@ -167,7 +167,7 @@ function beautiful_header_setting( $wp_customize ) {
     /**
      *
      *	Color Picker for Background
-     * 
+     *
      */
     $wp_customize->add_setting( 'beautiful_header_background_color' , array(
         'sanitize_callback' == 'esc_url_raw',
@@ -188,7 +188,7 @@ function beautiful_header_setting( $wp_customize ) {
     /**
      *
      *	Font Color of Search Icon/Mobile Menu
-     * 
+     *
      */
     $wp_customize->add_setting( 'beautiful_header_font_color' , array(
         'sanitize_callback' == 'esc_url_raw',
@@ -209,7 +209,7 @@ function beautiful_header_setting( $wp_customize ) {
     /**
      *
      *	Bottom Border Color
-     * 
+     *
      */
     $wp_customize->add_setting( 'beautiful_header_border_color' , array(
         'sanitize_callback' == 'esc_url_raw',

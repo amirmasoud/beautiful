@@ -1,10 +1,10 @@
 /*
-Theme Name: Beautiful v1.1.2
-Theme URI: https://github.com/amirmasoud/Beautiful
-Author: AmirMasoud Sheidayi
-Author URI: http://chakosh.ir/
+Theme Name: Beautiful
+Theme URI: https://github.com/amirmasoud/beautiful
+Author: Amirmasoud Sheydaei
+Author URI: https://amirmasoud.me
 Description: colorful responsive simple theme created for creativity, built with twitter bootstrap 3, remember to regenerate your thumbnails, use image larger or equal than 480×480 pixel for thumbnail, use this theme for your arts and photos, NOTICE: This theme will not show thumbnails that are less than 480×480 Pixel
-Version: 1.1.2
+Version: 1.2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: white, blue, gray, green, orange, pink, purple, red, silver, white, dark, light, one-column, two-columns, three-columns, four-columns, responsive-layout, custom-background, editor-style, featured-images, flexible-header, full-width-template, post-formats, rtl-language-support, sticky-post, translation-ready
@@ -100,7 +100,7 @@ textarea {
 	border-radius: 4px;
 }
 
-button, input[type="submit"], input[type="clear"], input[type="reset"], 
+button, input[type="submit"], input[type="clear"], input[type="reset"],
 .btn, .form-control {
 	border: 5px solid #F4F2F2;
 	border-radius: 4px;
@@ -113,7 +113,7 @@ button, input[type="submit"], input[type="clear"], input[type="reset"],
 	transition: all ease .3s;
 }
 
-button:hover, input[type="submit"]:hover, input[type="clear"]:hover, input[type="reset"]:hover, 
+button:hover, input[type="submit"]:hover, input[type="clear"]:hover, input[type="reset"]:hover,
 .btn:hover, , .form-control:hover {
 	border-radius: 10px;
 	border-color: #0DA0E0;
@@ -127,7 +127,7 @@ button:hover, input[type="submit"]:hover, input[type="clear"]:hover, input[type=
 	transition: all ease .3s;
 }
 
-button:active, input[type="submit"]:active, input[type="clear"]:active, input[type="reset"]:active, 
+button:active, input[type="submit"]:active, input[type="clear"]:active, input[type="reset"]:active,
 .btn:active, .form-control:active {
 	transform: translate(0px,5px);
 	-o-transform: translate(0px,5px);
@@ -142,7 +142,7 @@ button:active, input[type="submit"]:active, input[type="clear"]:active, input[ty
 }
 
 
-button:focus, input[type="submit"]:focus, input[type="clear"]:focus, input[type="reset"]:focus, 
+button:focus, input[type="submit"]:focus, input[type="clear"]:focus, input[type="reset"]:focus,
 .btn:focus, .form-control:focus
 {
 	box-shadow: 0 0;
@@ -488,7 +488,7 @@ header.row .col-md-8
 	top: -200px;
 	z-index: +9999;
 	color: #DDD;
-	background: #FAFAFA;	
+	background: #FAFAFA;
 }
 
 .search-input
@@ -634,7 +634,7 @@ display: block;
 	background: rgba(112, 117, 173, 0.9);
 }
 
-.content-area 
+.content-area
 {
 	overflow: hidden;
 	position: relative;
@@ -1083,7 +1083,7 @@ background: #FFF;
 }
 
 .commentlist .reply {}
-.reply a 
+.reply a
 {
 	border: 1px solid #DDD;
 	padding: 5px 25px;
