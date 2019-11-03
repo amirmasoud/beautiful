@@ -16,7 +16,7 @@ require_once('inc/customize/customize.php');
  */
 function beautiful_register_sidebar() {
 	    // register sidebars
-	    // 
+	    //
 	    // index page sidebar
 	    register_sidebar( array(
 	        'name'          => __( 'Primary Sidebar', 'beautiful' ),
@@ -82,7 +82,7 @@ if( ! function_exists( 'beautiful_setup' ) ) :
 		 * Make beautiful for translation.
 		 *
 		 * Translations can be added to the /languages/ directory.
-	     * 
+	     *
 		 */
 		load_theme_textdomain( 'beautiful', get_template_directory() . '/languages' );
 
@@ -102,10 +102,6 @@ if( ! function_exists( 'beautiful_setup' ) ) :
 		add_theme_support( 'title-tag' );
 
 		add_image_size('beautiful-box', 480, 480, true);
-
-		// hide admin bar
-		add_filter('show_admin_bar', '__return_false');
-
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -146,7 +142,7 @@ function beautiful_scripts() {
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array() );
 
 	// Add bootstrap, used in the main stylesheet.
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array() );	
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array() );
 
 	// Add Animation.css
 	wp_enqueue_style( 'beautiful-animation', get_template_directory_uri() . '/css/animate.css');
@@ -194,7 +190,7 @@ add_action( 'admin_enqueue_scripts', 'beautiful_admin_scripts' );
 
 // replace default comment forms with bootstrap forms
 // --------------------------------------------------------------------------------
-// 
+//
 
 add_filter( 'comment_form_default_fields', 'bootstrap3_comment_form_fields' );
 
@@ -224,7 +220,7 @@ return $args;
 
 // replace default title with our custom title
 // --------------------------------------------------------------------------------
-// 
+//
 
 add_filter( 'wp_title', 'beautiful_filter_wp_title' );
 /**
@@ -331,8 +327,8 @@ function beautiful_watermark($post_format) {
 /**
  * template for showing blog posts at front page
  * it based on havig thumbnail or not
- * 
- * @return blogPost 
+ *
+ * @return blogPost
  */
 function beautiful_blog_post() {
 
@@ -340,7 +336,7 @@ function beautiful_blog_post() {
 	$thumb_url_array = wp_get_attachment_image_src( $thumb_id, 'beautiful-box' );
 	if( ( '' != get_the_post_thumbnail() ) &&
 		( $thumb_url_array[1] == $thumb_url_array[2] ) &&
-		( $thumb_url_array[1] == 480 )) : ?>	
+		( $thumb_url_array[1] == 480 )) : ?>
 
 		<div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-3 col-md-4 col-xs-6 blog-post blog-thumbnail'); ?>>
 			<a class="post-link" rel="<?php the_ID(); ?>" href="<?php echo esc_url( the_permalink() ) ?>">
@@ -359,7 +355,7 @@ function beautiful_blog_post() {
 
 		<div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-3 col-md-4 col-xs-6 blog-post')?>>
 			<a class="post-link" rel="<?php the_ID(); ?>" href="<?php echo esc_url( get_permalink() ) ?>">
-				
+
 				<?php // just a transparent background ?>
 				<img src="<?php echo get_template_directory_uri() ?>/images/bg.png" alt="default-bg">
 
@@ -372,12 +368,12 @@ function beautiful_blog_post() {
 			</a>
 		</div>
 
-				
+
 	<?php else: ?>
 
 		<div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-3 col-md-4 col-xs-6 blog-post')?>>
 			<a class="post-link" rel="<?php the_ID(); ?>" href="<?php echo esc_url( get_permalink() ) ?>">
-				
+
 				<?php // just a transparent background ?>
 				<img src="<?php echo get_template_directory_uri() ?>/images/bg.png" alt="default-bg">
 
@@ -400,7 +396,7 @@ function beautiful_post_navigation() {
 		<div class="row post-navigation">
 			<div class="col-xs-6 text-center">
 				<?php next_post_link('<i class="fa fa-angle-left fa-fw fa-2x"></i> %link'); ?>
-				
+
 			</div>
 			<div class="col-xs-6 text-center">
 				<?php previous_post_link('%link <i class="fa fa-angle-right fa-fw fa-2x"></i>'); ?>
@@ -415,7 +411,7 @@ function beautiful_post_navigation() {
 			</div>
 			<div class="col-xs-6 text-center">
 				<?php next_post_link('<i class="fa fa-angle-right fa-fw fa-2x"></i> %link'); ?>
-				
+
 			</div>
 		</div>
 	<?php
