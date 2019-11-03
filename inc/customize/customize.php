@@ -11,7 +11,7 @@ require_once("single.php");
 /**
  * main customized css file
  * it will be included to the header
- * 
+ *
  * @return css
  */
 function beautiful_customizer_css() {
@@ -29,13 +29,26 @@ function beautiful_customizer_css() {
 <?php endif ?>
 
 body {
-    <?php $google_font = esc_attr (get_theme_mod("beautiful_genral_font") ); 
+    <?php $google_font = esc_attr (get_theme_mod("beautiful_genral_font") );
     $google_font = explode("+", $google_font);
     $google_font = implode(" ", $google_font);
     ?>
     font-family: <?php echo esc_attr (get_theme_mod("beautiful_genral_font") ) ?> ,'Open Sans', sans-serif;
     color: <?php echo esc_attr (get_theme_mod("beautiful_post_font_color") ) ?>;
 }
+
+.logo:hover,
+.logo:focus,
+.logo:active
+{
+	-webkit-animation: <?php echo esc_attr ( get_theme_mod( 'beautiful_logo_animation' ) ) ?> 1s;
+	-moz-animation: <?php echo esc_attr ( get_theme_mod( 'beautiful_logo_animation' ) ) ?> 1s;
+	-ms-animation: <?php echo esc_attr ( get_theme_mod( 'beautiful_logo_animation' ) ) ?> 1s;
+	-o-animation: <?php echo esc_attr ( get_theme_mod( 'beautiful_logo_animation' ) ) ?> 1s;
+	animation: <?php echo esc_attr ( get_theme_mod( 'beautiful_logo_animation' ) ) ?> 1s;
+	color: #333 !important;
+}
+
 
 h1, h2, h3, h4,h5, h6 {
     font-family: <?php echo esc_attr (get_theme_mod("beautiful_header_font") ) ?> ,'Open Sans', sans-serif !important;
@@ -291,7 +304,7 @@ header.row {
     border-bottom: 1px solid <?php echo esc_attr (get_theme_mod("beautiful_post_main_color") ) ?>;
 }
 .commentlist .reply {}
-.reply a 
+.reply a
 {
     border: 1px solid <?php echo esc_attr (get_theme_mod("beautiful_post_main_color") ) ?>;
 }

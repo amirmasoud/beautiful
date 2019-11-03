@@ -1,11 +1,7 @@
 <?php
 /**
- *
- * controlers of Home Page section in customize panel
- *
- * @author AmirMasoud Sheidayi <amirmasood32@ymail.com>
+ * @author Amirmasoud Sheydaei <amirmasoud.sheydaei@ymail.com>
  * @since Beautiful 1.0
- *
  */
 
 /**

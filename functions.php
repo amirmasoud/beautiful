@@ -9,6 +9,16 @@ require_once('inc/backend/footer.inc.php');
 
 // customizer panel
 require_once('inc/customize/customize.php');
+function beautiful_customizer_live_preview() {
+	wp_enqueue_script(
+		'beautiful-themecustomizer',
+		get_template_directory_uri() . '/js/theme-customizer.js',
+		array( 'jquery','customize-preview' ),
+		'',
+		true
+	);
+}
+add_action( 'customize_preview_init', 'beautiful_customizer_live_preview' );
 
 /**
  * register sidebars

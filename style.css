@@ -469,16 +469,6 @@ header.row .col-md-8
 	}
 }
 
-.logo:hover,
-.logo:focus,
-.logo:active
-{
-	-webkit-animation-name: shake;
-	animation-name: shake;
-	color: #333 !important;
-
-}
-
 /* Search in the header */
 .search-container {
 	position: absolute;
