@@ -2,9 +2,9 @@
 /**
  *
  * controlers of general options of the site in customize panel
- * 
+ *
  * @author AmirMasoud Sheidayi <amirmasood32@ymail.com>
- * @since Beautiful 1.0 * 
+ * @since Beautiful 1.0 *
  */
 function beautiful_theme_setting( $wp_customize ) {
 
@@ -12,7 +12,7 @@ function beautiful_theme_setting( $wp_customize ) {
     /**
      *
      *  Add general Section in customize Page
-     * 
+     *
      */
      $wp_customize->add_section( 'beautiful_general' , array(
           'title'      => __( 'General', 'beautiful' ),
@@ -23,10 +23,10 @@ function beautiful_theme_setting( $wp_customize ) {
      /**
       *
       *   available Google Fonts for all texts
-      * 
+      *
       */
     $wp_customize->add_setting( 'beautiful_genral_font' , array(
-          'sanitize_callback' == 'esc_url_raw',
+          'sanitize_callback' =>'esc_url_raw',
         'default' => 'Open Sans'
     ) );
     $wp_customize->add_control(
@@ -693,10 +693,10 @@ function beautiful_theme_setting( $wp_customize ) {
       *
       *   Available Google Fonts for Header texts
       *   including h1, h2, h3, h4, h5, h6
-      * 
+      *
       */
     $wp_customize->add_setting( 'beautiful_header_font' , array(
-          'sanitize_callback' == 'esc_url_raw',
+          'sanitize_callback' =>'esc_url_raw',
         'default' => 'Open Sans'
     ) );
     $wp_customize->add_control(
@@ -1362,10 +1362,10 @@ function beautiful_theme_setting( $wp_customize ) {
      /**
       *
       *   Uploading FavIcon
-      * 
+      *
       */
     $wp_customize->add_setting( 'beautiful_favicon' , array(
-          'sanitize_callback' == 'esc_url_raw',
+          'sanitize_callback' =>'esc_url_raw',
     ) );
     $wp_customize->add_control(
         new WP_Customize_Image_Control(
@@ -1384,7 +1384,7 @@ function beautiful_theme_setting( $wp_customize ) {
      *    Links Color
      */
     $wp_customize->add_setting( 'beautiful_link_color' , array(
-          'sanitize_callback' == 'esc_url_raw',
+          'sanitize_callback' =>'esc_url_raw',
         'default' => '#333'
     ) );
     $wp_customize->add_control(
@@ -1403,10 +1403,10 @@ function beautiful_theme_setting( $wp_customize ) {
     /**
      *
      *    Links color on the hover
-     * 
+     *
      */
     $wp_customize->add_setting( 'beautiful_link_color_hover' , array(
-          'sanitize_callback' == 'esc_url_raw',
+          'sanitize_callback' =>'esc_url_raw',
         'default' => '#009CB9'
     ) );
     $wp_customize->add_control(
@@ -1424,12 +1424,12 @@ function beautiful_theme_setting( $wp_customize ) {
 
 
     /**
-     * 
+     *
      * single post font color
-     * 
+     *
      */
     $wp_customize->add_setting( 'beautiful_post_font_color' , array(
-          'sanitize_callback' == 'esc_url_raw',
+          'sanitize_callback' =>'esc_url_raw',
         'default' => '#333'
     ) );
     $wp_customize->add_control(

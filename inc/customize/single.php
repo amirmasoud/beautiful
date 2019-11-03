@@ -12,7 +12,7 @@ function beautiful_single_setting( $wp_customize ) {
      * single post font color
      */
     $wp_customize->add_setting( 'beautiful_single_content_color' , array(
-        'sanitize_callback' == 'esc_url_raw',
+        'sanitize_callback' => 'esc_url_raw',
         'default' => '#333'
     ) );
     $wp_customize->add_control(
@@ -32,7 +32,7 @@ function beautiful_single_setting( $wp_customize ) {
      * single post font color
      */
     $wp_customize->add_setting( 'beautiful_single_content_header_color' , array(
-        'sanitize_callback' == 'esc_url_raw',
+        'sanitize_callback' => 'esc_url_raw',
         'default' => '#333'
     ) );
     $wp_customize->add_control(
@@ -52,7 +52,7 @@ function beautiful_single_setting( $wp_customize ) {
      * single post background
      */
     $wp_customize->add_setting( 'beautiful_single_content_background' , array(
-        'sanitize_callback' == 'esc_url_raw',
+        'sanitize_callback' => 'esc_url_raw',
         'default' => '#FFF'
     ) );
     $wp_customize->add_control(
@@ -71,10 +71,10 @@ function beautiful_single_setting( $wp_customize ) {
     /**
      *
      *  Single Post borders color
-     * 
+     *
      */
     $wp_customize->add_setting( 'beautiful_post_main_color' , array(
-        'sanitize_callback' == 'esc_url_raw',
+        'sanitize_callback' => 'esc_url_raw',
         'default' => '#DDD'
     ) );
     $wp_customize->add_control(
