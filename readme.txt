@@ -1,10 +1,4 @@
-Thanks for downloading Beautiful Theme
-
-More info always on http://chakosh.ir
-
-Thank you for supporting!
-
-1.0
+1.0.0
 initial realese
 
 1.0.1
